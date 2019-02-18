@@ -4,4 +4,4 @@ Based on [Small Business](http://startbootstrap.com/template-overviews/small-bus
 
 ## Status
 
-[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/BlackrockDigital/startbootstrap-small-business/master/LICENSE)
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/liketaurus/MinerSelector/blob/master/LICENSE)
