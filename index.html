@@ -57,8 +57,10 @@
 			<!-- /.col-lg-8 -->
 			<div class="col-lg-5">
 				<h1 class="font-weight-light">Welcome to my web miner selector!</h1>
-				<p>This page is just a simple launcher with a two shortcuts to web miners - an IOTA miner and GRC miner, both of
-					them is based on CoinHive web miner. Page was created for my own needs using free tools and component.</p>
+				<p>This page is just a simple launcher with a two shortcuts to web miners - an IOTA miner and GRC miner,
+					both of
+					them is based on CoinHive web miner. Page was created for my own needs using free tools and
+					component.</p>
 				<a class="btn btn-primary" href="#" data-toggle="modal" data-target="#moreModal">More Info</a>
 			</div>
 			<!-- /.col-md-4 -->
@@ -67,10 +69,23 @@
 
 		<!-- Call to Action Well -->
 		<div class="card bg-secondary my-5 text-center">
-			<div class="card-body">
-				<p class="m-0"><strong>IOTA</strong> address:
-					<br>E9PNCGQKIDQRJAAXISFCTMONVMWOSNBVHVFMDZOWTDNZQOMRDONGDVHPXKWXCWJQWVETCEXUKWVAQNANWUPZXEUQCX</p>
-				<p class="m-0"><strong>GRC</strong> address: <br>SKVQVDUzEy5ycENuynLozjaN9hYmUye46S</p>
+			<div class="card-body">				
+				<div class="form-group form-check-inline">
+						<p class="m-0">Choose launch mode:       &nbsp;&nbsp;&nbsp;</p>
+						<div class="custom-control custom-radio">
+							<input type="radio" id="customRadio1" name="customRadio" class="custom-control-input"
+								checked="">
+							<label class="custom-control-label" for="customRadio1">Modal Dialog</label>
+						</div>
+						<div>&nbsp;&nbsp;&nbsp;</div>
+						<div id="innerAddr" style="display: none;">
+							E9PNCGQKIDQRJAAXISFCTMONVMWOSNBVHVFMDZOWTDNZQOMRDONGDVHPXKWXCWJQWVETCEXUKWVAQNANWUPZXEUQCX
+						</div>
+						<div class="custom-control custom-radio">
+							<input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
+							<label class="custom-control-label" for="customRadio2">New Browser Tab</label>
+						</div>
+					</div><br>
 			</div>
 		</div>
 
@@ -80,11 +95,33 @@
 				<div class="card h-100">
 					<div class="card-body">
 						<h2 class="card-title">Mine IOTA</h2>
-						<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem magni quas ex numquam,
+						<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem magni quas ex
+							numquam,
 							maxime minus quam molestias corporis quod, ea minima accusamus.</p>
 					</div>
-					<div class="card-footer">
-						<a href="#" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#iotaModal">Start</a>
+					<div class="card-footer">						
+						<script>
+							function copyAddr() {
+								var tempInput = $("<input>");
+								$("body").append(tempInput);
+								var strAddr = $("#innerAddr").text();
+								tempInput.val($.trim(strAddr)).select();
+								document.execCommand("copy");
+								tempInput.remove();
+							}
+							function RunWay() {
+								if ($('#customRadio1').is(':checked')) {
+									copyAddr();
+									$('#iotaModal').modal();
+								}
+								else {
+									copyAddr();
+									window.open('https://mineiota.com/', '_blank');
+								}
+								//data-toggle="modal" data-target="#iotaModal"
+							}
+						</script>
+						<a href="#" class="btn btn-primary btn-sm" onclick="RunWay();">Start</a>
 					</div>
 				</div>
 			</div>
@@ -93,12 +130,21 @@
 				<div class="card h-100">
 					<div class="card-body">
 						<h2 class="card-title">GRC Aricado</h2>
-						<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod tenetur ex natus at
-							dolorem enim! Nesciunt pariatur voluptatem sunt quam eaque, vel, non in id dolore voluptates quos eligendi
+						<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod tenetur ex
+							natus at
+							dolorem enim! Nesciunt pariatur voluptatem sunt quam eaque, vel, non in id dolore voluptates
+							quos eligendi
 							labore.</p>
 					</div>
-					<div class="card-footer">
-						<a href="#" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#grcModal">Start</a>
+					<div class="card-footer">						
+						<script>
+							function RunGrcWay() {
+								if ($('#customRadio1').is(':checked')) {$('#grcModal').modal();}
+								else {window.open('https://grc.arikado.ru/coinhive.php?address=SKVQVDUzEy5ycENuynLozjaN9hYmUye46S', '_blank');}
+								//data-toggle="modal" data-target="#grcModal"
+							}
+						</script>
+						<a href="#" class="btn btn-primary btn-sm" onclick="RunGrcWay();">Start</a>
 					</div>
 				</div>
 			</div>
@@ -172,6 +218,10 @@
 							style="zoom:0.60" frameborder="0" height="1005" width="99.6%"></iframe>
 					</div>
 					<div class="modal-footer">
+							<p class="m-0" id="grcAddr" onclick="copyToClipboard('#grcAddr')" data-toggle="tooltip"
+							data-placement="left" title="Click to Copy">
+							SKVQVDUzEy5ycENuynLozjaN9hYmUye46S&nbsp;&nbsp;
+						</p>
 						<button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
 					</div>
 				</div>
@@ -189,16 +239,23 @@
 						</button>
 					</div>
 					<div class="modal-body">
-						<iframe src="https://mineiota.com/" style="zoom:0.60" frameborder="0" height="1005" width="99.6%"></iframe>
+						<iframe src="https://mineiota.com/" style="zoom:0.60" frameborder="0" height="1005"
+							width="99.6%"></iframe>
 					</div>
 					<div class="modal-footer">
-						<p class="m-0" id="iotaAddr" onclick="copyToClipboard('#iotaAddr')">
-							E9PNCGQKIDQRJAAXISFCTMONVMWOSNBVHVFMDZOWTDNZQOMRDONGDVHPXKWXCWJQWVETCEXUKWVAQNANWUPZXEUQCX&nbsp;&nbsp;</p>
+						<p class="m-0" id="iotaAddr" onclick="copyToClipboard('#iotaAddr')" data-toggle="tooltip"
+							data-placement="left" title="Click to Copy">
+							E9PNCGQKIDQRJAAXISFCTMONVMWOSNBVHVFMDZOWTDNZQOMRDONGDVHPXKWXCWJQWVETCEXUKWVAQNANWUPZXEUQCX&nbsp;&nbsp;
+						</p>
 						<button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
 					</div>
 				</div>
 			</div>
 		</div>
+
+
+
+
 
 	</div>
 	<!-- /.container -->
@@ -213,17 +270,24 @@
 		<!-- /.container -->
 	</footer>
 
+
 	<!-- Bootstrap core JavaScript -->
 	<script src="vendor/jquery/jquery.min.js"></script>
 	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 	<script>
+		$(function () {
+			$('[data-toggle="tooltip"]').tooltip()
+
+		})
 		function copyToClipboard(element) {
 			var $temp = $("<input>");
 			$("body").append($temp);
-			var str=$(element).text();
+			var str = $(element).text();
 			$temp.val($.trim(str)).select();
 			document.execCommand("copy");
 			$temp.remove();
+			$(element).tooltip('hide').attr('data-original-title', "Copied!").tooltip('fixTitle').tooltip('show');
+			$(element).tooltip('show');
 		}
 	</script>
 
