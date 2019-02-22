@@ -69,23 +69,23 @@
 
 		<!-- Call to Action Well -->
 		<div class="card bg-secondary my-5 text-center">
-			<div class="card-body">				
+			<div class="card-body">
 				<div class="form-group form-check-inline">
-						<p class="m-0">Choose launch mode:       &nbsp;&nbsp;&nbsp;</p>
-						<div class="custom-control custom-radio">
-							<input type="radio" id="customRadio1" name="customRadio" class="custom-control-input"
-								checked="">
-							<label class="custom-control-label" for="customRadio1">Modal Dialog</label>
-						</div>
-						<div>&nbsp;&nbsp;&nbsp;</div>
-						<div id="innerAddr" style="display: none;">
-							E9PNCGQKIDQRJAAXISFCTMONVMWOSNBVHVFMDZOWTDNZQOMRDONGDVHPXKWXCWJQWVETCEXUKWVAQNANWUPZXEUQCX
-						</div>
-						<div class="custom-control custom-radio">
-							<input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
-							<label class="custom-control-label" for="customRadio2">New Browser Tab</label>
-						</div>
-					</div><br>
+					<p class="m-0">Choose launch mode: &nbsp;&nbsp;&nbsp;</p>
+					<div class="custom-control custom-radio">
+						<input type="radio" id="customRadio1" name="customRadio" class="custom-control-input"
+							checked="">
+						<label class="custom-control-label" for="customRadio1">Modal Dialog</label>
+					</div>
+					<div>&nbsp;&nbsp;&nbsp;</div>
+					<div id="innerAddr" style="display: none;">
+						E9PNCGQKIDQRJAAXISFCTMONVMWOSNBVHVFMDZOWTDNZQOMRDONGDVHPXKWXCWJQWVETCEXUKWVAQNANWUPZXEUQCX
+					</div>
+					<div class="custom-control custom-radio">
+						<input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
+						<label class="custom-control-label" for="customRadio2">New Browser Tab</label>
+					</div>
+				</div><br>
 			</div>
 		</div>
 
@@ -94,12 +94,13 @@
 			<div class="col-md-6 mb-5">
 				<div class="card h-100">
 					<div class="card-body">
+							<img src="images/iota-icon.png" width="128px" class="rounded float-right" alt="IOTA icon">
 						<h2 class="card-title">Mine IOTA</h2>
 						<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem magni quas ex
 							numquam,
 							maxime minus quam molestias corporis quod, ea minima accusamus.</p>
 					</div>
-					<div class="card-footer">						
+					<div class="card-footer">
 						<script>
 							function copyAddr() {
 								var tempInput = $("<input>");
@@ -129,6 +130,7 @@
 			<div class="col-md-6 mb-5">
 				<div class="card h-100">
 					<div class="card-body">
+							<img src="images/GRC-icon.png" width="128px" class="rounded float-right" alt="GRC icon">
 						<h2 class="card-title">GRC Aricado</h2>
 						<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod tenetur ex
 							natus at
@@ -136,11 +138,11 @@
 							quos eligendi
 							labore.</p>
 					</div>
-					<div class="card-footer">						
+					<div class="card-footer">
 						<script>
 							function RunGrcWay() {
-								if ($('#customRadio1').is(':checked')) {$('#grcModal').modal();}
-								else {window.open('https://grc.arikado.ru/coinhive.php?address=SKVQVDUzEy5ycENuynLozjaN9hYmUye46S', '_blank');}
+								if ($('#customRadio1').is(':checked')) { $('#grcModal').modal(); }
+								else { window.open('https://grc.arikado.ru/coinhive.php?address=SKVQVDUzEy5ycENuynLozjaN9hYmUye46S', '_blank'); }
 								//data-toggle="modal" data-target="#grcModal"
 							}
 						</script>
@@ -175,9 +177,18 @@
 						</button>
 					</div>
 					<div class="modal-body">
-						<p>Modal body text goes here.</p>
+						<img src="images/taurus.png" class="rounded float-left" alt="...">
+						<p><br><br>A simple launcher of IOTA and GRC web miners.<br>
+							Created by <strong><a href="http://ProductivityBlog.com.ua" target="_blank">Alexander
+									Babich</a></strong> based on <a
+								href="http://startbootstrap.com/template-overviews/small-business/"
+								target="_blank">Small Business</a> - a responsive marketing landing page template for <a
+								href="http://getbootstrap.com/" target="_blank">Bootstrap</a> created by <a
+								href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a>.
+						</p>
 					</div>
 					<div class="modal-footer">
+						<p class="text-left">&copy; 2019 Alexander Babich </p>&nbsp;&nbsp;&nbsp;
 						<button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
 					</div>
 				</div>
@@ -194,7 +205,12 @@
 						</button>
 					</div>
 					<div class="modal-body">
-						<p>Modal body text goes here.</p>
+						<img src="images/monero-coinhive.jpg" class="img-fluid" alt="Coinhive + Monero"><p></p>
+						<p><a href="https://coinhive.com/" target="_blank">Coinhive</a> is a cryptocurrency mining
+							service that relies on a small chunk of client code designed to be installed on Web pages.
+							The code uses some or all of the CPU power of any browser that visits the site in question,
+							enlisting the machine in a bid to mine bits of the <a href="https://ww.getmonero.org/"
+								target="_blank">Monero cryptocurrency</a></p>
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
@@ -218,7 +234,7 @@
 							style="zoom:0.60" frameborder="0" height="1005" width="99.6%"></iframe>
 					</div>
 					<div class="modal-footer">
-							<p class="m-0" id="grcAddr" onclick="copyToClipboard('#grcAddr')" data-toggle="tooltip"
+						<p class="m-0" id="grcAddr" onclick="copyToClipboard('#grcAddr')" data-toggle="tooltip"
 							data-placement="left" title="Click to Copy">
 							SKVQVDUzEy5ycENuynLozjaN9hYmUye46S&nbsp;&nbsp;
 						</p>
